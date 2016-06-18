@@ -1,3 +1,93 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//Typography
+h1,
+h2,
+h3 {
+  font-family: Futura, Helvetica, Arial, sans-serif;
+}
+
+li
+{
+  font-family: Futura, Helvetica, Arial, sans-serif;
+}
+
+.home {
+  text-transform: uppercase;
+}
+
+/*** navigation ***/
+
+.home a {
+  color: white;
+  text-decoration: none;
+  padding-left: 10px;
+}
+
+.navbar-fixed-top {
+  background-color: cornflowerblue;
+  border: 2px solid darkblue;
+  /*height: 10px;*/
+}
+
+.nav {
+  z-index: 1;
+  /*background-color: black;*/
+  padding-right: 10px;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+  /*color: #ff0;*/
+  color: green;
+          transition: color 600ms;
+  -webkit-transition: color 600ms;
+}
+
+a:hover {
+  /*color: #ff0;*/
+  color: green;
+          transition: color 600ms;
+  -webkit-transition: color 600ms;
+}
+
+.anchor {
+  padding-top: 51px;
+}
+
+.navbar-inverse {
+  /*background-color: #49BBAA;*/
+}
+
+.navbar-inverse .navbar-nav>li>a {
+  color: white;
+}
+
+footer {
+  left: 0px;
+  bottom: 0px;
+  height: 40px;
+  width: 100%;
+  background-color: white;
+  line-height: 40px;
+  align-content: center;
+}
+
+.footerDiv {
+  width: 100%;
+  align-content: center;
+}
+
+.footerCell {
+  cursor: pointer;
+  border: 0px solid white;
+  float: middle;  
+  padding-left: 1px;
+  padding-right: 1px;
+  text-align: center;
+  color: blue;
+  border-radius: 1px;
+  background-color: white;
+}
+
