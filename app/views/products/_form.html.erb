@@ -1,3 +1,48 @@
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css" rel="stylesheet">
+
+<div class="row">
+  <div class="col-md-2 col-md-offset-1">
+    <%= form_for(@product) do |f| %>
+      <% if @product.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+          <ul>
+            <% @product.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="field">
+        <%= f.label :name %><br>
+        <%= f.text_field :name %><br>
+      </div>
+
+      <div class="field">
+        <%= f.label :description %><br>
+        <%= f.text_area :description %><br>
+      </div>
+
+      <div class="field">
+        <%= f.label :image_url %><br>
+        <%= f.text_field :image_url %><br>
+      </div>
+
+      <div class="field">
+        <%= f.label :color %><br>
+        <%= f.text_field :colour %><br>
+      </div>
+      <div class="actions">
+        <button id="whatever" class="btn btn-primary" name="submit" type="submit">
+          <span>Save</span>
+          <i class="icon-ok" style="font-size:20px; vertical-align: middle;"></i>
+        </button>
+      </div>
+  <% end %>
+  </div>
+</div>
+
 <%= form_for(@product) do |f| %>
   <% if @product.errors.any? %>
     <div id="error_explanation">
@@ -10,7 +55,6 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
@@ -28,6 +72,13 @@
     <%= f.text_field :colour %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <button id="whatever" class="btn btn-primary" name="submit" type="submit">
+      <span>Save</span>
+      <i class="icon-ok" style="font-size:20px; vertical-align: middle;"></i>
+    </button>
   </div>
+    <!--<div class="actions">-->
+    <!--<%= f.submit %>-->
+    <!--</div>-->
 <% end %>
+

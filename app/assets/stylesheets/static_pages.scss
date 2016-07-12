@@ -26,7 +26,19 @@ li
   padding-left: 10px;
 }
 
+.navbar-fixed-bottom {
+  background-color: cornflowerblue;
+  border: 2px solid darkblue;
+  /*height: 10px;*/
+}
+
 .navbar-fixed-top {
+  background-color: cornflowerblue;
+  border: 2px solid darkblue;
+  /*height: 10px;*/
+}
+
+.navbar-bottom {
   background-color: cornflowerblue;
   border: 2px solid darkblue;
   /*height: 10px;*/
@@ -90,4 +102,3 @@ footer {
   border-radius: 1px;
   background-color: white;
 }
-
