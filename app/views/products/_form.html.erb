@@ -43,42 +43,42 @@
   </div>
 </div>
 
-<%= form_for(@product) do |f| %>
-  <% if @product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+<!--<%= form_for(@product) do |f| %>-->
+  <!--<% if @product.errors.any? %>-->
+    <!--<div id="error_explanation">-->
+      <!--<h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>-->
 
-      <ul>
-      <% @product.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :image_url %><br>
-    <%= f.text_field :image_url %>
-  </div>
-  <div class="field">
-    <%= f.label :color %><br>
-    <%= f.text_field :colour %>
-  </div>
-  <div class="actions">
-    <button id="whatever" class="btn btn-primary" name="submit" type="submit">
-      <span>Save</span>
-      <i class="icon-ok" style="font-size:20px; vertical-align: middle;"></i>
-    </button>
-  </div>
-    <!--<div class="actions">-->
-    <!--<%= f.submit %>-->
+      <!--<ul>-->
+      <!--<% @product.errors.full_messages.each do |message| %>-->
+        <!--<li><%= message %></li>-->
+      <!--<% end %>-->
+      <!--</ul>-->
     <!--</div>-->
-<% end %>
+  <!--<% end %>-->
+  <!--<div class="field">-->
+    <!--   <%= f.label :name %><br>-->
+    <!--<%= f.text_field :name %>-->
+  <!--</div>-->
+  <!--<div class="field">-->
+    <!--<%= f.label :description %><br>-->
+    <!--<%= f.text_area :description %>-->
+  <!--</div>-->
+  <!--<div class="field">-->
+    <!--<%= f.label :image_url %><br>-->
+    <!--<%= f.text_field :image_url %>-->
+  <!--</div>-->
+  <!--<div class="field">-->
+    <!--<%= f.label :color %><br>-->
+    <!--<%= f.text_field :colour %>-->
+  <!--</div>-->
+  <!--<div class="actions">-->
+    <!--<button id="whatever" class="btn btn-primary" name="submit" type="submit">-->
+      <!--<span>Save</span>-->
+      <!--<i class="icon-ok" style="font-size:20px; vertical-align: middle;"></i>-->
+    <!--</button>-->
+  <!--</div>-->
+    <!--&lt;!&ndash;<div class="actions">&ndash;&gt;-->
+    <!--&lt;!&ndash;<%= f.submit %>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--<% end %>-->
 
