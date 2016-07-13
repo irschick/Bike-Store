@@ -5,15 +5,7 @@
 <br><br>
 <div class="container-fluid">
   <div class="row">
-    <% @products.each do |product| %>
-      <div class="col-sm-2 col-md-4">
-        <%= image_tag(product.image_url, class: "thumbnail img-responsive") %>
-        <h1><%= product.name %></h1><%= link_to image_tag("editProduct.png", border: 0), edit_product_path(product) %>
-        <p><%= product.description %></p>
-        <p>Color: <%= product.colour %></p>
-        <strong>Price: $ 42</strong>
-      </div>
-  <% end %>
+    <%= render @products %>
   </div>
 </div>
 <br><br>
