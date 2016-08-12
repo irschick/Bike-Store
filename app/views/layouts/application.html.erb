@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Michael Irschick</title>
+  <title>Bikes of Oakland</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -28,12 +28,16 @@
     </div>
     <div class="navbar-collapse collapse" id="navigationbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/products">Products</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="<%= active_class(static_pages_about_path) %>">
-          <%= link_to "About Us", static_pages_about_path%>
+        <li>
+          <%= form_tag("/products", method: "get", class: 'nav navbar-nav navbar-form navbar-right', role: 'search') do %>
+              <%= text_field_tag(:q, params[:q], class: 'form-control', placeholder: 'Search for Bikes', style: "color: #a69eb0") %>
+              <%= submit_tag("Search", class: 'btn btn-success') do  %>
+                  <i class="glyphicon glyphicon-search"></i>
+                  <%end%>
+          <% end %>
         </li>
+        <li><a href="/products">Products</a></li>
+        <li><%= link_to "About Us", static_pages_about_path%></li>
       </ul>
     </div>
   </div>
@@ -48,7 +52,6 @@
     </ul>
   </div><!--/col-->
 </div><!--/container-->
-
 </body>
 </html>
 

@@ -1,15 +1,10 @@
 <p id="notice"><%= notice %></p>
-<br><br>
-<h1>Listing Products</h1>
-<%= link_to image_tag("addProduct.png", border: 0), new_product_path %>
-<br><br>
+<h1>Bikes of Oakland / Full Inventory</h1>
+<h3><%= @filter_text %></h3>
 <div class="container-fluid">
+  <%= link_to image_tag("addProduct.png", border: 0), new_product_path %>
   <div class="row">
     <%= render @products %>
   </div>
 </div>
 <br><br>
-
-
-
-

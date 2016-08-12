@@ -141,3 +141,5 @@ ul, menu, dir {
 #final-footer i{
     font-size: auto;
 }
+
+body { padding-top: 50px; }
