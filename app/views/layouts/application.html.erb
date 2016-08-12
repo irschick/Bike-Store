@@ -28,10 +28,12 @@
     </div>
     <div class="navbar-collapse collapse" id="navigationbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/products">Products <i class="fa fa-code" aria-hidden="true"></i></a></li>
+        <li><a href="/products">Products</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/static_pages/about">About Us <i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
+        <li class="<%= active_class(static_pages_about_path) %>">
+          <%= link_to "About Us", static_pages_about_path%>
+        </li>
       </ul>
     </div>
   </div>
