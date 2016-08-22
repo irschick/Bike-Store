@@ -35,6 +35,8 @@ gem 'font-awesome-rails', '~> 4.1.0.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'devise'
+
 group :production do
   gem 'pg'
   gem 'rails_12factor'
