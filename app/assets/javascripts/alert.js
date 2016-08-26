@@ -10,4 +10,5 @@
 
 $(document).ready( function() {
     $(".alert").delay(1000).fadeOut();
+    $(".notice").delay(1000).fadeOut();
 });
