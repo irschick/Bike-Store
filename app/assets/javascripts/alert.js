@@ -9,6 +9,6 @@
 // });
 
 $(document).ready( function() {
-    $(".alert").delay(1000).fadeOut();
-    $(".notice").delay(1000).fadeOut();
+    $(".alert").delay(3500).fadeOut();
+    $(".notice").delay(3500).fadeOut();
 });
