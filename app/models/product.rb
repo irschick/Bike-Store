@@ -6,7 +6,7 @@ class Product < ActiveRecord::Base
     comments.first.rating
   end
   def highest_rating_comment
-    binding.pry
+    # binding.pry
     comments.rating_desc.first
   end
   def lowest_rating_comment
