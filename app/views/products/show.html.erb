@@ -7,32 +7,61 @@
       <h1><%= @product.name %></h1>
       <p><%= @product.description %></p>
       <p>Color: <%= @product.colour %></p>
+      <p>First Rating: <%= @product.first_rating %></p>
+      <p>Avg Rating: <%= @product.average_rating %></p>
+      <p>High Rating Comment: <%= @product.highest_rating_comment %></p>
+      <p>Low Rating Comment: <%= @product.lowest_rating_comment %></p>
       <strong>Product Price: $ 42</strong>
       <%= image_tag(@product.image_url, class: "img-responsive") %>
     </div>
   </div>
 </div>
 
+<div class="col-sm-12 col-md-6">
+  <div class="list-of-comments">
+    <br>
+    <br>
+    <h3> Highest rating </h3>
+    <p>
+      <%= @product.highest_rating_comment.body%>
+    <div class="rated" data-score="<%= @product.highest_rating_comment.rating %>"></div>
+    </p>
+    <br>
 
-<!--<p>-->
-  <!--<strong>Name:</strong>-->
-  <!--<%= @product.name %>-->
-<!--</p>-->
+    <h3> Lowest rating </h3>
+    <p>
+      <%= @product.lowest_rating_comment.body %>
+    <div class="rated" data-score="<%= @product.lowest_rating_comment.rating %>"></div>
+    </p>
+    <br>
+    <br>
 
-<!--<p>-->
-  <!--<strong>Description:</strong>-->
-  <!--<%= @product.description %>-->
-<!--</p>-->
+    <h3> Read all the reviews </h3>
+    <br>
+    <% @comments.each do |comment| %>
+        <div class="product-review">
+          <br>
+          <strong><%= comment.user.first_name %></strong>
+          <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small>
+          <!-- space -->
+          &nbsp;
+          <!-- Destroy with admin conditional -->
+          <% if signed_in? && current_user.admin? %>
+              <%= link_to ('<span class="glyphicon glyphicon-remove"></span>').html_safe, product_comment_path(comment.product, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
 
-<!--<p>-->
-  <!--<strong>Image url:</strong>-->
-  <!--<%= @product.image_url %>-->
-<!--</p>-->
+          <!-- Review Core -->
+          <blockquote>
+            <p><%= comment.body %></p>
+            <br>
+            <div class="rated" data-score="<%= comment.rating %>"></div>
+          </blockquote>
 
-<!--<p>-->
-  <!--<strong>Color:</strong>-->
-  <!--<%= @product.colour %>-->
-<!--</p>-->
+        </div>
+    <% end %>
+  </div>
+</div><!-- /col -->
+
 
 <%= link_to image_tag("editProduct.png", border: 0), edit_product_path(@product) %> |
 <%= link_to image_tag("allProducts.png", border: 0), products_path  %> |
