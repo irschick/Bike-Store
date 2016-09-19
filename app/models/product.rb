@@ -6,8 +6,11 @@ class Product < ActiveRecord::Base
     comments.first.rating
   end
   def highest_rating_comment
-    # binding.pry
-    comments.rating_desc.first
+    if comments.nil?
+      puts 'nill comments'
+      return ''
+    end
+    return comments.rating_desc.first
   end
   def lowest_rating_comment
     comments.rating_asc.first
@@ -18,4 +21,15 @@ class Product < ActiveRecord::Base
   def list_comments
     return comments
   end
+
+  def highest_rating_comment_rating
+    puts "high"
+    # highest_rating_comment.rating
+  end
+
+  def lowest_rating_comment_rating
+    puts "low"
+    # lowest_rating_comment.rating
+  end
+
 end
