@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da00ff29-19bf-4c7c-a265-7900dc84bf8c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/bike.png" afterPath="$PROJECT_DIR$/app/assets/images/bike.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
     </list>
     <ignored path="sample_app.iws" />
@@ -86,7 +87,7 @@
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="228">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <caret line="19" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -96,7 +97,7 @@
         <entry file="file://$PROJECT_DIR$/log/development.log">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="176">
-              <caret line="12593" column="24" selection-start-line="12593" selection-start-column="24" selection-end-line="12593" selection-end-column="24" />
+              <caret line="13203" column="0" selection-start-line="13203" selection-start-column="0" selection-end-line="13203" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -802,7 +803,7 @@
       <workItem from="1470958764981" duration="20702000" />
       <workItem from="1471829252873" duration="5095000" />
       <workItem from="1472159055411" duration="23455000" />
-      <workItem from="1474231089761" duration="6913000" />
+      <workItem from="1474231089761" duration="7336000" />
     </task>
     <servers />
   </component>
@@ -812,7 +813,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61734000" />
+    <option name="totallyTimeSpent" value="62157000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="0" />
@@ -1224,7 +1225,7 @@
     <entry file="file://$PROJECT_DIR$/log/development.log">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
-          <caret line="12593" column="24" selection-start-line="12593" selection-start-column="24" selection-end-line="12593" selection-end-column="24" />
+          <caret line="13203" column="0" selection-start-line="13203" selection-start-column="0" selection-end-line="13203" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1232,7 +1233,7 @@
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <caret line="19" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
