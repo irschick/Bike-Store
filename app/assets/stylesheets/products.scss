@@ -28,7 +28,6 @@
 }
 
 .thumbnail {
-  /* padding: 4px; */
   line-height: 1.428571429;
   background-color: #ffffff;
   border: 1px solid #dddddd;
@@ -59,6 +58,7 @@ img {
   position:relative;
 }
 
+//Used for showing outline on product list page
 #prod_div:hover {
   border: 2px solid lightblue;
 }
@@ -66,30 +66,6 @@ img {
 #prod_div {
   border: 2px solid transparent;
 }
-
-//
-//.panel>.panel-heading:after,.panel>.panel-heading:before{
-//  position:absolute;
-//  top:11px;left:-16px;
-//  right:100%;
-//  width:0;
-//  height:0;
-//  display:block;
-//  content:" ";
-//  border-color:transparent;
-//  border-style:solid solid outset;
-//  pointer-events:none;
-//}
-//.panel>.panel-heading:after{
-//  border-width:7px;
-//  border-right-color:#f7f7f7;
-//  margin-top:1px;
-//  margin-left:2px;
-//}
-//.panel>.panel-heading:before{
-//  border-right-color:#ddd;
-//  border-width:8px;
-//}
 
 .star-rating {
   line-height:32px;

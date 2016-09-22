@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   root 'static_pages#about'
 
   resources :orders, only: [:index, :show, :create, :destroy]
-  resources :products
+  resources :products do
+    resources :comments
+  end
   get 'static_pages/about'
   get 'static_pages/contact'
   get 'static_pages/index'

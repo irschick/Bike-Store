@@ -60,42 +60,46 @@
         </div><!-- /panel-body -->
       </div><!-- /panel panel-default -->
       <% end %>
+      <%= render 'new_comment' %>
+      <%= render 'comments' %>
     </div>
   </div>
 </div>
 
-<div class="container">
-  <% if !@comments.empty? %>
-  <div class="row">
-    <div class="col-sm-12">
-      <h3>All User Comments</h3>
-    </div><!-- /col-sm-12 -->
-  </div><!-- /row -->
 
-  <% @comments.each do |comment| %>
-    <div class="row">
-    <div class="col-sm-1">
-      <div class="thumbnail">
-        <%=image_tag("man-1.png", height:"30", width:"30")%>
-      </div><!-- /thumbnail -->
-    </div><!-- /col-sm-1 -->
 
-    <div class="col-sm-5">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <strong><%= comment.rating%> Star(s)</strong> <span class="text-muted">Frank S. Commented <%= comment.how_many_days_ago %> day(s) ago</span>
-        </div>
-        <div class="panel-body">
-          <%= comment.body%>
-        </div><!-- /panel-body -->
-      </div><!-- /panel panel-default -->
-    </div><!-- /col-sm-5 -->
-  </div><!-- /row -->
-  <% end %>
-  <% end %>
+<!--<div class="container">-->
+  <!--<% if !@comments.empty? %>-->
+  <!--<div class="row">-->
+    <!--<div class="col-sm-12">-->
+      <!--<h3>All User Comments</h3>-->
+    <!--</div>&lt;!&ndash; /col-sm-12 &ndash;&gt;-->
+  <!--</div>&lt;!&ndash; /row &ndash;&gt;-->
+
+  <!--<% @comments.each do |comment| %>-->
+    <!--<div class="row">-->
+    <!--<div class="col-sm-1">-->
+      <!--<div class="thumbnail">-->
+        <!--<%=image_tag("man-1.png", height:"30", width:"30")%>-->
+      <!--</div>&lt;!&ndash; /thumbnail &ndash;&gt;-->
+    <!--</div>&lt;!&ndash; /col-sm-1 &ndash;&gt;-->
+
+    <!--<div class="col-sm-5">-->
+      <!--<div class="panel panel-default">-->
+        <!--<div class="panel-heading">-->
+          <!--<strong><%= comment.rating%> Star(s)</strong> <span class="text-muted">Frank S. Commented <%= comment.how_many_days_ago %> day(s) ago</span>-->
+        <!--</div>-->
+        <!--<div class="panel-body">-->
+          <!--<%= comment.body%>-->
+        <!--</div>&lt;!&ndash; /panel-body &ndash;&gt;-->
+      <!--</div>&lt;!&ndash; /panel panel-default &ndash;&gt;-->
+    <!--</div>&lt;!&ndash; /col-sm-5 &ndash;&gt;-->
+  <!--</div>&lt;!&ndash; /row &ndash;&gt;-->
+  <!--<% end %>-->
+  <!--<% end %>-->
 
   <%= link_to image_tag("editProduct.png", border: 0), edit_product_path(@product) %> |
   <%= link_to image_tag("allProducts.png", border: 0), products_path  %> |
-  <%= link_to image_tag("addProduct.png", border: 0), new_product_path %>
-</div><!-- /container -->
+  <!--<%= link_to image_tag("addProduct.png", border: 0), new_product_path %>-->
+<!--</div>&lt;!&ndash; /container &ndash;&gt;-->
 
