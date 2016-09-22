@@ -23,13 +23,11 @@ class Product < ActiveRecord::Base
   end
 
   def highest_rating_comment_rating
-    puts "high"
-    # highest_rating_comment.rating
+    highest_rating_comment.rating
   end
 
   def lowest_rating_comment_rating
-    puts "low"
-    # lowest_rating_comment.rating
+    lowest_rating_comment.rating
   end
 
 end

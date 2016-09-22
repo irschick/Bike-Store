@@ -19,88 +19,51 @@
             </div>
           </div>
       </div>
+
       <% if !@product.highest_rating_comment.nil? %>
       <h3>Highest Rating</h3>
       <div class="panel panel-default">
         <div class="panel-heading">
           <strong>
-            <div class="star-rating">
-              <span class="fa fa-star-o" data-rating="1"></span>
-              <span class="fa fa-star-o" data-rating="2"></span>
-              <span class="fa fa-star-o" data-rating="3"></span>
-              <span class="fa fa-star-o" data-rating="4"></span>
-              <span class="fa fa-star-o" data-rating="5"></span>
-              <input type="hidden" name="whatever" class="rating-value" value="3">
-            </div>
-              <%= @product.highest_rating_comment_rating %> Star(s) </strong> <span class="text-muted">John S. Commented <%= @product.highest_rating_comment.how_many_days_ago %> day(s) ago</span>
+            <p><%= @product.highest_rating_comment.user.first_name %> <small><em><%= "#{time_ago_in_words(@product.highest_rating_comment.created_at)} ago" %></em></small></p>
+          </strong>
         </div>
         <div class="panel-body">
-          <%= @product.highest_rating_comment.body %>
+          <div class="rated" data-score="<%= @product.highest_rating_comment.rating %>"></div>
+          <p><%= @product.highest_rating_comment.body %></p>
         </div><!-- /panel-body -->
       </div><!-- /panel panel-default -->
       <% end %>
 
       <% if !@product.lowest_rating_comment.nil? %>
-      <h3>Lowest Rating</h3>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <strong>
-            <div class="star-rating">
-              <span class="fa fa-star-o" data-rating="1"></span>
-              <span class="fa fa-star-o" data-rating="2"></span>
-              <span class="fa fa-star-o" data-rating="3"></span>
-              <span class="fa fa-star-o" data-rating="4"></span>
-              <span class="fa fa-star-o" data-rating="5"></span>
-              <input type="hidden" name="whatever" class="rating-value" value="3">
+          <h3>Lowest Rating</h3>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <strong>
+                <p><%= @product.lowest_rating_comment.user.first_name %> <small><em><%= "#{time_ago_in_words(@product.lowest_rating_comment.created_at)} ago" %></em></small></p>
+              </strong>
             </div>
-              <%= @product.lowest_rating_comment_rating %> Star(s) </strong> <span class="text-muted">Julie S. Commented <%= @product.lowest_rating_comment.how_many_days_ago %> day(s) ago</span>
-        </div>
-        <div class="panel-body">
-          <%= @product.lowest_rating_comment.body %>
-        </div><!-- /panel-body -->
-      </div><!-- /panel panel-default -->
+            <div class="panel-body">
+              <div class="rated" data-score="<%= @product.lowest_rating_comment.rating %>"></div>
+              <p><%= @product.lowest_rating_comment.body %></p>
+            </div><!-- /panel-body -->
+          </div><!-- /panel panel-default -->
       <% end %>
       <%= render 'new_comment' %>
-      <%= render 'comments' %>
-
     </div>
   </div>
 </div>
 
-
-
-<!--<div class="container">-->
-  <!--<% if !@comments.empty? %>-->
-  <!--<div class="row">-->
-    <!--<div class="col-sm-12">-->
-      <!--<h3>All User Comments</h3>-->
-    <!--</div>&lt;!&ndash; /col-sm-12 &ndash;&gt;-->
-  <!--</div>&lt;!&ndash; /row &ndash;&gt;-->
-
-  <!--<% @comments.each do |comment| %>-->
-    <!--<div class="row">-->
-    <!--<div class="col-sm-1">-->
-      <!--<div class="thumbnail">-->
-        <!--<%=image_tag("man-1.png", height:"30", width:"30")%>-->
-      <!--</div>&lt;!&ndash; /thumbnail &ndash;&gt;-->
-    <!--</div>&lt;!&ndash; /col-sm-1 &ndash;&gt;-->
-
-    <!--<div class="col-sm-5">-->
-      <!--<div class="panel panel-default">-->
-        <!--<div class="panel-heading">-->
-          <!--<strong><%= comment.rating%> Star(s)</strong> <span class="text-muted">Frank S. Commented <%= comment.how_many_days_ago %> day(s) ago</span>-->
-        <!--</div>-->
-        <!--<div class="panel-body">-->
-          <!--<%= comment.body%>-->
-        <!--</div>&lt;!&ndash; /panel-body &ndash;&gt;-->
-      <!--</div>&lt;!&ndash; /panel panel-default &ndash;&gt;-->
-    <!--</div>&lt;!&ndash; /col-sm-5 &ndash;&gt;-->
-  <!--</div>&lt;!&ndash; /row &ndash;&gt;-->
-  <!--<% end %>-->
-  <!--<% end %>-->
-
+<div class="container">
+  <% if !@comments.empty? %>
+  <div class="row">
+    <div class="col-sm-12">
+      <h3>All User Comments</h3>
+    </div><!-- /col-sm-12 -->
+  </div><!-- /row -->
+  <%= render 'comments' %>
+  <% end %>
   <%= link_to image_tag("editProduct.png", border: 0), edit_product_path(@product) %> |
-  <%= link_to image_tag("allProducts.png", border: 0), products_path  %> |
-  <!--<%= link_to image_tag("addProduct.png", border: 0), new_product_path %>-->
-<!--</div>&lt;!&ndash; /container &ndash;&gt;-->
+  <%= link_to image_tag("allProducts.png", border: 0), products_path  %>
+</div><!-- /container -->
 
