@@ -1,25 +1,27 @@
-<!--<p id="notice"><%= notice %></p>-->
 <br>
 <div class="container">
   <div class="row">
     <div class="col-md-8">
       <div>
+        <!--Show Product Image-->
         <%= image_tag(@product.image_url, class: "img-responsive") %>
       </div>
     </div>
     <div class="col-md-4">
       <div>
-          <div class="panel panel-default">
-            <div class="panel-heading"><strong><%= @product.name %></strong></div>
-            <div class="panel-body">
-              <p><strong>Description: </strong><%= @product.description %></p>
-              <p><strong>Color: </strong><%= @product.colour %></p>
-              <p><strong>Avg Rating:</strong> <%= @product.average_rating %> Stars</p>
-              <strong>Price: $ 42</strong>
-            </div>
+        <div class="panel panel-default">
+          <div class="panel-heading"><strong><%= @product.name %></strong></div>
+          <div class="panel-body">
+            <p><%= @product.description %></p>
+            <p><strong>Color: </strong><%= @product.colour %><p>
+            <div class="rated" data-score="<%= @product.average_rating %>"></div>
+            <p><strong>$ 499</strong><p>
           </div>
+        </div>
       </div>
+      <%= link_to image_tag("editProduct.png", border: 0), edit_product_path(@product) %>
 
+      <!--Show the Highest Comment-->
       <% if !@product.highest_rating_comment.nil? %>
       <h3>Highest Rating</h3>
       <div class="panel panel-default">
@@ -35,6 +37,7 @@
       </div><!-- /panel panel-default -->
       <% end %>
 
+      <!--Show the lowest rating comment-->
       <% if !@product.lowest_rating_comment.nil? %>
           <h3>Lowest Rating</h3>
           <div class="panel panel-default">
@@ -54,16 +57,12 @@
   </div>
 </div>
 
+<!--Show all the comments here-->
 <div class="container">
   <% if !@comments.empty? %>
-  <div class="row">
     <div class="col-sm-12">
       <h3>All User Comments</h3>
     </div><!-- /col-sm-12 -->
-  </div><!-- /row -->
-  <%= render 'comments' %>
+    <%= render 'comments' %>
   <% end %>
-  <%= link_to image_tag("editProduct.png", border: 0), edit_product_path(@product) %> |
-  <%= link_to image_tag("allProducts.png", border: 0), products_path  %>
 </div><!-- /container -->
-

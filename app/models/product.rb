@@ -6,14 +6,16 @@ class Product < ActiveRecord::Base
     comments.first.rating
   end
   def highest_rating_comment
-    if comments.nil?
-      puts 'nill comments'
+    if comments.size == 0
       return ''
     end
     return comments.rating_desc.first
   end
   def lowest_rating_comment
-    comments.rating_asc.first
+    if comments.size == 0
+      return ''
+    end
+    return comments.rating_asc.first
   end
   def average_rating
     comments.average(:rating).to_f

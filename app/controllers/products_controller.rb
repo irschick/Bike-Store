@@ -4,22 +4,16 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
 
-  # def index
-  #   @products = Product.all
-  # end
-
   def index
     @filter_text = ''
     if params[:q]
       search_term = params[:q]
-      puts 'now filtering'
+      # puts 'now filtering'
       if Rails.env.development?
         @products = Product.where("name LIKE ?", "%#{search_term}%")
       else Rails.env.production?
         @products = Product.where("name ilike ?", "%#{search_term}%")
       end
-      # @products = Product.where("name LIKE ?", "%#{search_term}%")
-      # @products = Product.all
       @filter_text = 'Search Results for: '+ search_term
     else
       @products = Product.all
@@ -29,7 +23,6 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
-    # @comments = @product.comments
     @comments = @product.comments.order("created_at DESC")
   end
 
@@ -46,7 +39,6 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
-
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
