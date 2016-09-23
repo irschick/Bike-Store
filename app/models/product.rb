@@ -1,5 +1,6 @@
 class Product < ActiveRecord::Base
-  require 'pry'
+  validates :name, presence: true
+  # require 'pry'
   has_many :orders
   has_many :comments
   def first_rating

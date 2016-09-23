@@ -21,4 +21,10 @@
 <% end %>
 </div>
 
+<div class="digg_pagination">
+  <div class="page_info">
+    <%= page_entries_info @comments %>
+  </div>
+  <%= will_paginate @comments, :container => false %>
+</div>
 
